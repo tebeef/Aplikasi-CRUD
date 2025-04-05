@@ -1,3 +1,18 @@
+<?php
+include 'connect.php';
+
+if (isset($_GET['hapus'])) {
+    $id = $_GET['hapus'];
+    $query = mysqli_query($conn, "DELETE FROM mahasiswa WHERE No = '$id'");
+
+    if ($query) {
+        echo "<script>alert('Data berhasil dihapus'); window.location='daftar.php';</script>";
+    } else {
+        echo "<script>alert('Gagal menghapus data');</script>";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
